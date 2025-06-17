@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     safety_net_attestation (0.4.0)
-      jwt (~> 2.0)
+      jwt (< 4.0)
 
 GEM
   remote: https://rubygems.org/
