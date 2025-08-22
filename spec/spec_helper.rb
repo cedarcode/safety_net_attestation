@@ -23,7 +23,7 @@ def generate_key
   OpenSSL::PKey::RSA.new(2048)
 end
 
-# rubocop:disable Naming/UncommunicativeMethodParamName
+# rubocop:disable Naming/MethodParameterName
 def generate_cert(dn, key, serial, issuer, not_before: nil, not_after: nil)
   cert = OpenSSL::X509::Certificate.new
   issuer = cert unless issuer
@@ -51,4 +51,4 @@ def issue_cert(dn, key, serial, extensions, issuer: nil, issuer_key: nil, not_be
   cert.sign(issuer_key, "sha256")
   cert
 end
-# rubocop:enable Naming/UncommunicativeMethodParamName
+# rubocop:enable Naming/MethodParameterName
