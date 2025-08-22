@@ -192,3 +192,6 @@ Style/YodaCondition:
 
 Style/ZeroLengthPredicate:
   Enabled: true
+
+Layout/BlockAlignment:
+  Enabled: false
