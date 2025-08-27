@@ -60,7 +60,7 @@ DEPENDENCIES
   bundler
   pry-byebug
   rspec (~> 3.8)
-  rubocop (~> 0.81.0)
+  rubocop (~> 0.81)
   safety_net_attestation!
 
 BUNDLED WITH
