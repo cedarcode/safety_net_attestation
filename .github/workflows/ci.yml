@@ -15,6 +15,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        jwt:
+          - '< 3'
+          - '< 4'
         ruby:
           - '3.4'
           - '3.3'
@@ -24,10 +27,12 @@ jobs:
           - '2.7'
           - '2.6'
           - '2.5'
-          - '2.4'
+    env:
+      JWT_VERSION: ${{ matrix.jwt }}
     steps:
     - uses: actions/checkout@v5
     - run: rm Gemfile.lock
+
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
