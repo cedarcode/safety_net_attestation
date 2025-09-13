@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 appraise "jwt-2" do
   gem "jwt", "~> 2.0", "< 3.0"
 end
