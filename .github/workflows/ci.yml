@@ -15,9 +15,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        jwt:
-          - '< 3'
-          - '< 4'
         ruby:
           - '3.4'
           - '3.3'
@@ -27,8 +24,8 @@ jobs:
           - '2.7'
           - '2.6'
           - '2.5'
-    env:
-      JWT_VERSION: ${{ matrix.jwt }}
+          - '2.4'
+          - '2.3'
     steps:
     - uses: actions/checkout@v5
     - run: rm Gemfile.lock
@@ -37,7 +34,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
-    - run: bundle exec rspec
+    - run: bundle exec appraisal install
+    - run: bundle exec appraisal rake
 
   lint:
     runs-on: ubuntu-latest
