@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ..
   specs:
     safety_net_attestation (0.4.0)
       irb
@@ -24,7 +24,7 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jwt (3.1.2)
+    jwt (2.10.2)
       base64
     method_source (1.1.0)
     parallel (1.27.0)
@@ -34,7 +34,7 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.4.0)
+    prism (1.5.1)
     pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -53,7 +53,7 @@ GEM
     regexp_parser (2.11.2)
     reline (0.6.2)
       io-console (~> 0.5)
-    rexml (3.4.2)
+    rexml (3.4.4)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -91,6 +91,7 @@ PLATFORMS
 DEPENDENCIES
   appraisal
   bundler
+  jwt (~> 2.0, < 3.0)
   pry-byebug
   rspec (~> 3.8)
   rubocop (~> 0.81)
