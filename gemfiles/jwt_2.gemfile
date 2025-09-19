@@ -2,7 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "rubocop", "~> 1.80", require: false
 gem "jwt", "~> 2.0", "< 3.0"
 
 gemspec path: "../"
