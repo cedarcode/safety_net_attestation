@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2025-09-22
+### Changed
+- Update `jwt` dependency to support both v2 and v3. ([#23](https://github.com/cedarcode/safety_net_attestation/pull/7))
+
 ## [0.4.0] - 2019-12-29
 ### Fixed
 - Root certificate loading when this gem is used as a dependency
