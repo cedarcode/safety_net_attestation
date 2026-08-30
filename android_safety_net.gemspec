@@ -17,10 +17,24 @@ Gem::Specification.new do |spec|
     spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/master/CHANGELOG.md"
   end
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+    Dir[
+      ".github/**/*",
+      ".gitignore",
+      ".rspec",
+      ".rubocop.yml",
+      "Appraisals",
+      "CHANGELOG.md",
+      "CODE_OF_CONDUCT.md",
+      "Gemfile",
+      "Gemfile.lock",
+      "README.md",
+      "Rakefile",
+      "android_safety_net.gemspec",
+      "bin/*",
+      "gemfiles/*.gemfile",
+      "lib/**/*"
+    ].select { |file| File.file?(file) }
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
