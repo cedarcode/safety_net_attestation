@@ -10,6 +10,7 @@ module SafetyNetAttestation
     def self.from(x5c_certificates, trusted_certificates, time: Time.now)
       store = OpenSSL::X509::Store.new
       trusted_certificates.each { |certificate| store.add_cert(certificate) }
+      store.purpose = OpenSSL::X509::PURPOSE_SSL_SERVER
 
       signing_certificate, *certificate_chain = x5c_certificates
       store_context = OpenSSL::X509::StoreContext.new(store, signing_certificate, certificate_chain)

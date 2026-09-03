@@ -35,7 +35,7 @@ module SafetyNetAttestation
         certificate_chain.first.public_key
       end
 
-      verify_certificate_subject(certificate_chain.first)
+      verify_certificate_identity(certificate_chain.first)
       verify_nonce(response, nonce)
       verify_timestamp(response, timestamp_leeway, time)
 
@@ -88,10 +88,8 @@ module SafetyNetAttestation
 
     private
 
-    def verify_certificate_subject(certificate)
-      common_name = certificate.subject.to_a.assoc("CN")
-
-      unless common_name[1] == "attest.android.com"
+    def verify_certificate_identity(certificate)
+      unless OpenSSL::SSL.verify_certificate_identity(certificate, "attest.android.com")
         raise CertificateSubjectError
       end
     end

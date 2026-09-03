@@ -6,7 +6,7 @@ This gem verifies that the statement:
 - has a valid signature that is trusted using certificates from https://pki.goog/
 - has the correct nonce
 - has been generated recently (default allowed leeway from current time is 60 seconds)
-- has a signing certificate with the correct subject
+- has a signing certificate valid for TLS server authentication as `attest.android.com`
 
 With a valid statement your application can then inspect the information contained about the device integrity, calling
 app, and if applicable any integrity errors and potential solutions (see usage).
