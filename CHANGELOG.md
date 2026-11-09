@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Exclude the development `Gemfile` and `Gemfile.lock` from the packaged gem, so security scanners don't report
+  the locked versions. ([#19](https://github.com/cedarcode/safety_net_attestation/pull/19))
 
 ## [0.5.0] - 2025-09-22
 ### Changed
